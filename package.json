@@ -1,0 +1,15 @@
+{
+  "name": "fivem-cslib",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc --watch"
+  },
+  "author": "CENSOR_1337",
+  "license": "MIT",
+  "devDependencies": {
+    "@citizenfx/client": "latest",
+    "@citizenfx/server": "latest",
+    "@types/node": "^20.4.0",
+    "typescript": "^5.1.6"
+  }
+}
