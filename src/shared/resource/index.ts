@@ -1,4 +1,4 @@
-import * as cslib from "../../server";
+import cslib from "../../server";
 export const resourceName = GetCurrentResourceName();
 
 export const getResourceEventName = (event: string) => {
@@ -24,6 +24,6 @@ export const onResourceStart = (callback: () => void) => {
 
 export const resource = {
 	on: (eventName: string, callback: (...args: any[]) => void): any => cslib.on(getResourceEventName(eventName), callback),
-    onNet: (eventName: string, callback: (...args: any[]) => void): any => cslib.onNet(getResourceEventName(eventName), callback),
-    emit: (eventName: string, ...args: any[]): void => cslib.emit(getResourceEventName(eventName), ...args),
+	onNet: (eventName: string, callback: (...args: any[]) => void): any => cslib.onNet(getResourceEventName(eventName), callback),
+	emit: (eventName: string, ...args: any[]): void => cslib.emit(getResourceEventName(eventName), ...args),
 };
