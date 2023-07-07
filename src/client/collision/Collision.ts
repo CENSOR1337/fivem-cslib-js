@@ -2,16 +2,6 @@ import { Vector3 } from "../../shared/utils/Vector3";
 import { Collision as CollisionBase } from "../../shared/collision";
 import { randomUUID } from "../utils";
 
-function GetPlayers() {
-	const players = new Array<number>();
-	const num = GetNumPlayerIndices();
-	for (let i = 0; i < num; i++) {
-		const playerId = parseInt(GetPlayerFromIndex(i));
-		players.push(playerId);
-	}
-	return players;
-}
-
 export class Collision extends CollisionBase {
 	readonly id = randomUUID();
 

@@ -2,6 +2,16 @@ import * as crypto from "crypto";
 import { Vector3 } from "../../shared/utils/Vector3";
 import { Collision as CollisionBase } from "../../shared/collision";
 
+function GetPlayers() {
+	const players = new Array<number>();
+	const num = GetNumPlayerIndices();
+	for (let i = 0; i < num; i++) {
+		const playerId = parseInt(GetPlayerFromIndex(i));
+		players.push(playerId);
+	}
+	return players;
+}
+
 export class Collision extends CollisionBase {
 	readonly id = crypto.randomUUID();
 
@@ -16,7 +26,7 @@ export class Collision extends CollisionBase {
 	}
 	protected getRevelantEntities(): Array<number> {
 		const entities = new Array<number>();
-		const players = GetActivePlayers();
+		const players = GetPlayers();
 
 		for (const player of players) {
 			const ped = GetPlayerPed(player);
