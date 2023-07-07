@@ -24,3 +24,11 @@ export function emit(eventName: string, ...args: any[]): void {
 export function log(...args: any[]) {
 	console.log(...args);
 }
+
+export function everyTick(callback: () => void): number {
+	return setTick(callback);
+}
+
+export function clearEveryTick(id: number) {
+	return clearTick(id);
+}
